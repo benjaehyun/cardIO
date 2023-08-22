@@ -1,0 +1,19 @@
+{
+  "name": "cardio",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
+    "mongodb": "^5.8.0",
+    "mongoose": "^7.4.4",
+    "morgan": "~1.9.1"
+  }
+}
