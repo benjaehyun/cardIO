@@ -38,11 +38,11 @@ const cardSchema = new Schema ({
     }, 
     userName: String, 
     userAvatar: String,
-    deck: {
-        type: Schema.Types.ObjectId, 
-        ref: 'Deck', 
-        required: true
-    }, 
+    // deck: [{
+    //     type: Schema.Types.ObjectId, 
+    //     ref: 'Deck', 
+    //     required: true
+    // }], 
     comments: [cardCommentSchema]
 }, {
     timestamps: true

@@ -11,10 +11,6 @@ const userSchema = new Schema ({
     email: String, 
     avatar: String, 
     // decks: deckSchema, 
-    dateCreated: {
-        type: Date, 
-        required: true, 
-    }, 
     decks: [{
         type: Schema.Types.ObjectId, 
         ref: 'Deck'
