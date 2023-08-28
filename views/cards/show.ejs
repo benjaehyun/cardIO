@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<!-- need to think about how you're going to go forward and backward for each card -->
+
+
+<div id="card-front">
+    <%= card.front %> 
+</div>
+
+<div id="card-back">
+    <%= card.back %> 
+</div>
+
+
+<% if (card.comments.length) { %> 
+    <div id="card-comment">
+            <% card.comments.forEach(function(com) { %>
+                <h4> <img src="<%=com.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= com.userName %> </h4>
+                <p> <%= com.content</p>
+                <%= com.createdAt.toLocaleDateString()%> 
+            <% }) %>
+    <% } else { %>
+        <h4>No Comments Yet</h4>
+<% } %>
+<!-- be sure to add a way to create comments and to edit/delete comments if you're the owner -->
+
+<%- include('../partials/footer') %>

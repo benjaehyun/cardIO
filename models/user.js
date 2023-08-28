@@ -14,7 +14,11 @@ const userSchema = new Schema ({
     dateCreated: {
         type: Date, 
         required: true, 
-    }
+    }, 
+    decks: [{
+        type: Schema.Types.ObjectId, 
+        ref: 'Deck'
+    }]
 }, {
     timestamps: true
 })

@@ -1,6 +1,20 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const cardCommentSchema = new Schema ({
+    content: {
+        type: String, 
+        required: true
+    }, 
+    user: {
+        type: Schema.Types.ObjectId, 
+        ref: 'User', 
+        required: true
+    }, 
+    userName: String, 
+    userAvatar: String
+})
+
 const cardSchema = new Schema ({
     front:{
         type: String,
@@ -12,9 +26,24 @@ const cardSchema = new Schema ({
     }, 
     temperature: {
         type: Number, 
-        required: true, 
         // default: ()=> // think about the way you're going to implement temperature and where its going to start 
-    }
+    }, 
+    comments: {
+        type: String,
+    }, 
+    user: {
+        type: Schema.Types.ObjectId, 
+        ref: 'User', 
+        required: true
+    }, 
+    userName: String, 
+    userAvatar: String,
+    deck: {
+        type: Schema.Types.ObjectId, 
+        ref: 'Deck', 
+        required: true
+    }, 
+    comments: [cardCommentSchema]
 }, {
     timestamps: true
 })

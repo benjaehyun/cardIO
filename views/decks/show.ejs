@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+<h2><%=deck.title%></h2>
+<h3> <img src="<%=deck.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= deck.userName %> </h3>
+<!-- add a link to the user page when its added -->
+
+
+<% deck.cards.forEach(function (c) { %> 
+    <div id="card-pair">
+        <div id="deck-card-front">
+            <%= c.front %>
+        </div>
+        <div id="deck-card-back">
+            <%= c.back %>
+        </div>
+    </div>
+    <br> <br>
+<% }) %>
+
+<% if (deck.comments.length) { %> 
+<div id="deck-comment">
+        <% deck.comments.forEach(function(com) { %>
+            <h4> <img src="<%=com.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= com.userName %> </h4>
+            <p> <%= com.content</p>
+            <%= com.createdAt.toLocaleDateString()%> 
+        <% }) %>
+<% } else { %>
+    <h4>No Comments Yet</h4>
+<% } %>
+</div>
+<!-- be sure to add a way to create comments and to edit/delete comments -->
+
+<%- include('../partials/footer') %>
