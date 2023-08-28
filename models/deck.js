@@ -6,17 +6,8 @@ const deckSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'Card'
     }],
-    user: userSchema
+    user: userSchema // remember that the user schema used to be on this page so this will probably have to be changed
 })
 
-const userSchema = new Schema ({
-    decks: deckSchema, 
-    dateCreated: {
-        type: Date, 
-        required: true, 
-    }
-}, {
-    timestamps: true
-})
 
 module.exports = mongoose.model('Deck', deckSchema)
