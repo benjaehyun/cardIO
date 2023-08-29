@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+
+const commentsCtrl = require('../controllers/comments')
+const ensureLoggedIn = require('../config/ensureLoggedIn')
+
+router.post('/decks/:deckId/comments', ensureLoggedIn, commentsCtrl.createDeckComment)
+
+
+module.exports = router

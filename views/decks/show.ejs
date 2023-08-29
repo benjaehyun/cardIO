@@ -3,13 +3,25 @@
 <!-- <%=deck.title%>
 <h3> <img src="<%=deck.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= deck.userName %> </h3> -->
 <!-- add a link to the user page when its added -->
+<h1><%= deck.title%> </h1>
+<h3>notes: <%= deck.notes%> </h3>
 
-<div id="delete-deck">
+
+<% if (user?._id.equals(deck.user)) { %>
+    <a href="/decks/<%= deck._id %>/edit">Edit Details</a>
+    <div id="delete-deck">
+        <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
+            <button type="submit">DELETE DECK</button>
+        </form>
+    </div>
+    <% } %>
+
+<!-- <div id="delete-deck">
     <% if (user?._id.equals(deck.user)) { %>
         <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
             <button type="submit">DELETE DECK</button>
         </form>
-    <% } %>
+    <% } %> -->
 </div>
 <% deck.cards.forEach(function (c) { %> 
     <div id="card-pair">
@@ -26,12 +38,27 @@
     <br> <br>
 <% }) %>
 
+<% if (user?._id.equals(deck.user)) { %>
+    <a href='/decks/<%=deck._id%>/cards/new'>Add Cards</a>
+    
+    <% } %>
+
+
+
+<br><br><h2>Comments</h2>
+<form id="add-deck-comment-form" method="POST"
+    action="/decks/<%= deck._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Comment">
+</form>
+
 <% if (deck.comments.length) { %> 
 <div id="deck-comment">
         <% deck.comments.forEach(function(com) { %>
             <h4> <img src="<%=com.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= com.userName %> </h4>
             <p> <%= com.content%></p>
-            <%= com.createdAt.toLocaleDateString()%> 
+            <%= com.createdAt%> 
         <% }) %>
 <% } else { %>
     <h4>No Comments Yet</h4>

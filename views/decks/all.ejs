@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<h1>All Decks</h1>
 
 <table id="deck-list">
     <thead>
@@ -8,7 +9,6 @@
         <th>Created</th>
         <th>User</th>
         <th>Notes</th>
-        <th>Edit Deck Details</th>
         <th></th>
       </tr>
     </thead>
@@ -17,16 +17,8 @@
         <tr>
           <td><a href="/decks/<%=d._id%>"> <%= d.title %> </a></td>
           <td><%= d.createdAt.toLocaleDateString() %></td>
-          <td class="deck-user"><img alt="avatar" src="<%= d.userAvatar %>" referrerpolicy="no-referrer" ><%= d.userName %></td>
+          <td class="deck-user"><img alt="avatar" src="<%= d.userAvatar %>" referrerpolicy="no-referrer" ><a href="/profiles/<%=d.user%>"><%= d.userName %></a></td>
           <td><%= d.notes %></td>
-          <td><a href="/decks/<%= d._id %>/edit">Go To Deck</a></td>
-          <td>
-            <div id="delete-deck">
-              <% if (user?._id.equals(d.user)) { %>
-                  <form action="/decks/<%=d._id%>?_method=DELETE" method="POST">
-                      <button type="submit">DELETE DECK</button>
-                  </form>
-              <% } %>
           </div>
           </td>
           <!-- edit link  -->

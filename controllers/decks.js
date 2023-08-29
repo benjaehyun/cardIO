@@ -12,12 +12,15 @@ module.exports = {
 }
 
 async function index (req, res) {
-    const deck = await Deck.find({'user._id': req.user.id }) 
-    console.log(deck)
+    const decks = await Deck.find({'user': req.user.id }) 
+    console.log(`req.user.id ${req.user.id}`)
+    // console.log(`deck: ${decks}`)
+    res.render('decks/index', {decks})
 }
 
 async function deleteDeck (req, res) {
-    const deck = await Deck.findByIdAndRemove(req.params.deckId) // look into a way that doesn't use a protected path, ie. check for the user id as well as the deck id before deleting it 
+    // const deck = await Deck.findByIdAndRemove(req.params.deckId) // look into a way that doesn't use a protected path, ie. check for the user id as well as the deck id before deleting it 
+    const deck = await Deck.findOneAndDelete({'_id': req.params.deckId, 'user': req.user._id})
     res.redirect('/decks')
 }
 
@@ -33,7 +36,7 @@ async function update (req, res) {
 
 async function allDecks(req, res) {
     const decks = await Deck.find({})
-    res.render('decks/index', {title: 'All Decks', decks})
+    res.render('decks/all', {title: 'All Decks', decks})
 }
 
 async function show(req, res) {
@@ -47,7 +50,10 @@ function newDeck (req, res) {
 
 async function create (req, res) {
     try {
-        req.body.user = req.user
+        req.body.user = req.user._id 
+        req.body.userName = req.user.name 
+        req.body.avatar = req.user.avatar
+        // req.body.user = req.user
         const deck = await Deck.create(req.body)
         res.redirect(`/decks/${deck._id}/cards/new`)
     } catch (err) {
