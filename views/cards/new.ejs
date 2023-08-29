@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
 
-
-<form>
+<!-- how to store the deck id -->
+<form action="/decks/<%= deckId %>/cards/" method="POST">
     <label> Card Front: </label>
     <input type="text" name="front">
     <!-- make this required -->
     <label> Card Back: </label>
-    <!-- make this required -->
     <input type="text" name="back">
+    <!-- make this required -->
     <label> Card Comment: </label>
     <input type="text" name="comments">
     <input type="submit" value="Add Card">

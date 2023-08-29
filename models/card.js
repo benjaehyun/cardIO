@@ -27,10 +27,7 @@ const cardSchema = new Schema ({
     temperature: {
         type: Number, 
         // default: ()=> // think about the way you're going to implement temperature and where its going to start 
-    }, 
-    comments: {
-        type: String,
-    }, 
+    },
     user: {
         type: Schema.Types.ObjectId, 
         ref: 'User', 

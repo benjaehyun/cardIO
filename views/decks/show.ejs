@@ -1,9 +1,16 @@
 <%- include('../partials/header') %>
-<h2><%=deck.title%></h2>
-<h3> <img src="<%=deck.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= deck.userName %> </h3>
+
+<!-- <%=deck.title%>
+<h3> <img src="<%=deck.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= deck.userName %> </h3> -->
 <!-- add a link to the user page when its added -->
 
-
+<div id="delete-deck">
+    <% if (user?._id.equals(deck.user)) { %>
+        <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
+            <button type="submit">DELETE DECK</button>
+        </form>
+    <% } %>
+</div>
 <% deck.cards.forEach(function (c) { %> 
     <div id="card-pair">
         <div id="deck-card-front">
@@ -11,6 +18,9 @@
         </div>
         <div id="deck-card-back">
             <%= c.back %>
+        </div>
+        <div>
+            <a href="/decks/<%=deck._id%>/cards/<%=c._id%>/edit"> Edit Card </a>
         </div>
     </div>
     <br> <br>
@@ -20,7 +30,7 @@
 <div id="deck-comment">
         <% deck.comments.forEach(function(com) { %>
             <h4> <img src="<%=com.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= com.userName %> </h4>
-            <p> <%= com.content</p>
+            <p> <%= com.content%></p>
             <%= com.createdAt.toLocaleDateString()%> 
         <% }) %>
 <% } else { %>

@@ -1,5 +1,18 @@
 <%- include('../partials/header') %>
 
+<form action="/decks/<%= deck._id %>?_method=PUT" method="POST">
+    <input type="text" name="title" value="<%= deck.title %>"><br>
+    <input type="text" name="notes" value="<%= deck.notes %>"><br>
+    <button type="submit">Update Deck</button>    
+</form>
+
+<div id="delete-deck">
+    <% if (user?._id.equals(deck.user)) { %>
+        <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
+            <button type="submit">DELETE DECK</button>
+        </form>
+    <% } %>
+</div>
 
 
 <%- include('../partials/footer') %>

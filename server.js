@@ -29,7 +29,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-console.log(process.env.SECRET)
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
@@ -49,7 +48,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/decks', decksRouter);
-// app.use('/', cardsRouter); 
+app.use('/', cardsRouter); 
 
 
 // catch 404 and forward to error handler

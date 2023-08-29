@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+
+
+<table id="deck-list">
+    <thead>
+      <tr>
+        <th>Deck Name</th>
+        <th>Created</th>
+        <th>User</th>
+        <th>Notes</th>
+        <th>Edit Deck Details</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% decks.forEach(function(d) { %>
+        <tr>
+          <td><a href="/decks/<%=d._id%>"> <%= d.title %> </a></td>
+          <td><%= d.createdAt.toLocaleDateString() %></td>
+          <td class="deck-user"><img alt="avatar" src="<%= d.userAvatar %>" referrerpolicy="no-referrer" ><%= d.userName %></td>
+          <td><%= d.notes %></td>
+          <td><a href="/decks/<%= d._id %>/edit">Go To Deck</a></td>
+          <td>
+            <div id="delete-deck">
+              <% if (user?._id.equals(d.user)) { %>
+                  <form action="/decks/<%=d._id%>?_method=DELETE" method="POST">
+                      <button type="submit">DELETE DECK</button>
+                  </form>
+              <% } %>
+          </div>
+          </td>
+          <!-- edit link  -->
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+
+<%- include('../partials/footer') %>

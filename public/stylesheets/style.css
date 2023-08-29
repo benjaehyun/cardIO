@@ -100,3 +100,11 @@ table td {
   border-radius: 50%;
   height: 40px;
 }
+
+#deck-card-front {
+  background-color: burlywood;
+}
+
+#deck-card-back {
+  background-color: burlywood;
+}
