@@ -1,7 +1,22 @@
 <%- include('./partials/header') %>
 
 
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+
+<% if (user) { %>
+  <!-- code out the links that you want to add for logged in users -->
+  <a href="/decks/"> Go To My Decks </a>
+  <a href="/decks/new"> Create a New Deck</a>
+  <a href="/logout">LOGOUT</a>
+<% } else { %>
+  <div>
+    <a href="/auth/google">Login</a> to create a deck and add comments
+  </div>
+<% } %>
+<div>
+  <a href="/decks/all">See</a> all of the decks other users have created
+</div>
+
   </body>
 </html>

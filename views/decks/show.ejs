@@ -4,7 +4,10 @@
 <h3> <img src="<%=deck.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= deck.userName %> </h3> -->
 <!-- add a link to the user page when its added -->
 <h1><%= deck.title%> </h1>
+<h3>By: <%= deck.userName %></h3>
+<img alt="avatar" src="<%= deck.userAvatar %>" referrerpolicy="no-referrer" >
 <h3>notes: <%= deck.notes%> </h3>
+
 
 
 <% if (user?._id.equals(deck.user)) { %>
@@ -59,6 +62,13 @@
             <h4> <img src="<%=com.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= com.userName %> </h4>
             <p> <%= com.content%></p>
             <%= com.createdAt%> 
+            <div id="delete-card-comment">
+                <% if (user?._id.equals(com.user)) { %>
+                    <form action="/decks/<%=deck._id%>/comments/<%=com._id%>?_method=DELETE" method="POST">
+                        <button type="submit">DELETE COMMENT</button>
+                    </form>
+                <% } %>
+            </div>
         <% }) %>
 <% } else { %>
     <h4>No Comments Yet</h4>
