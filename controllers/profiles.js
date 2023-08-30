@@ -10,3 +10,4 @@ async function index(req, res) {
     const decks = await Deck.find({'user': req.params.profileId})
     res.render('profiles/index', {decks, user})
 }
+

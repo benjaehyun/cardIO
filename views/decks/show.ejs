@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('../partials/decks/showHeader') %>
 
 <!-- <%=deck.title%>
 <h3> <img src="<%=deck.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= deck.userName %> </h3> -->
@@ -7,6 +7,11 @@
 <h3>By: <%= deck.userName %></h3>
 <img alt="avatar" src="<%= deck.userAvatar %>" referrerpolicy="no-referrer" >
 <h3>notes: <%= deck.notes%> </h3>
+<div id="play">
+    <form action="/decks/<%= deck._id %>/play" method="GET">
+        <button type="submit">PLAY</button>
+    </form>
+</div>
 
 
 

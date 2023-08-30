@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/decks/play.css' />
+    <title>cardIO</title>
+</head>
+<body>
+    <nav>
+        <!-- probably the logo img  -->
+        <a href="/"> Home</a>
+        <a href="/decks/all"> All Decks</a>
+        <!-- create deck a tag  -->
+        <% if (user) { %>
+            <!-- code out the links that you want to add for logged in users -->
+        <a href="/decks/"> My Decks </a>
+        <a href="/decks/new"> Create a New Deck</a>
+        <a href="/logout">LOG OUT</a>
+        <% } else { %>
+          <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" id="google-img"></a>
+        <% } %>
+    </nav>
+    <main>

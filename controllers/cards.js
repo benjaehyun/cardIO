@@ -9,6 +9,7 @@ module.exports = {
     delete: deleteCard, 
     play, 
     nextCard, 
+    lastCard, 
     playCurrentCard
 }
 
@@ -30,6 +31,18 @@ async function nextCard(req,res) {
     const cardsArr = deck.cards
     const idx = cardsArr.findIndex(card => card._id.equals(req.params.cardId)) 
     const nextIdx = idx + 1
+    const card = await Card.findById(deck.cards[nextIdx])
+    if (card) {
+        res.render('cards/play', {deck, card})
+    } else {
+        res.redirect(`/decks/${deck._id}`)
+    }   
+}
+async function lastCard(req,res) {
+    const deck = await Deck.findById(req.params.deckId)
+    const cardsArr = deck.cards
+    const idx = cardsArr.findIndex(card => card._id.equals(req.params.cardId)) 
+    const nextIdx = idx - 1
     const card = await Card.findById(deck.cards[nextIdx])
     if (card) {
         res.render('cards/play', {deck, card})

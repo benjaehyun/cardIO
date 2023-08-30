@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('../partials/decks/allHeader') %>
 
 <h1>All Decks</h1>
 
@@ -19,7 +19,12 @@
           <td><%= d.createdAt.toLocaleDateString() %></td>
           <td class="deck-user"><img alt="avatar" src="<%= d.userAvatar %>" referrerpolicy="no-referrer" ><a href="/profiles/<%=d.user%>"><%= d.userName %></a></td>
           <td><%= d.notes %></td>
-          </div>
+          <td>
+            <div id="play">
+              <form action="/decks/<%= d._id %>/play" method="GET">
+                  <button type="submit">PLAY</button>
+              </form>
+             </div>
           </td>
           <!-- edit link  -->
         </tr>

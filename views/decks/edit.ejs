@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('../partials/decks/editHeader') %>
 
 <form action="/decks/<%= deck._id %>?_method=PUT" method="POST">
     <input type="text" name="title" value="<%= deck.title %>"><br>

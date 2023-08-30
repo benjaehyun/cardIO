@@ -1,0 +1,23 @@
+body {
+    background-color: bisque;
+}
+
+#card-front { 
+    min-height: 20vmin;
+    max-height: 20vmin;
+    min-width: 30vmin;
+    max-width: 30vmin; 
+
+    background-color: aqua;
+}
+
+#card-back { 
+    margin-top: 10vmin;
+    min-height: 20vmin;
+    max-height: 20vmin;
+    min-width: 30vmin;
+    max-width: 30vmin; 
+    background-color: aqua;
+}
+
+

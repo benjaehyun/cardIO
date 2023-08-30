@@ -10,6 +10,7 @@ router.get('/decks/:deckId/cards/:cardId/edit', ensureLoggedIn, cardsCtrl.edit)
 router.get('/decks/:deckId/play', ensureLoggedIn, cardsCtrl.play)
 router.get('/decks/:deckId/cards/:cardId/play', ensureLoggedIn, cardsCtrl.playCurrentCard)
 router.get('/decks/:deckId/cards/:cardId/play/next', ensureLoggedIn, cardsCtrl.nextCard)
+router.get('/decks/:deckId/cards/:cardId/play/last', ensureLoggedIn, cardsCtrl.lastCard)
 
 router.post('/decks/:deckId/cards/', ensureLoggedIn, cardsCtrl.create)
 router.put('/decks/:deckId/cards/:cardId', ensureLoggedIn, cardsCtrl.update)

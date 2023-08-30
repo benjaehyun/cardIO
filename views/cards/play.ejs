@@ -1,15 +1,19 @@
-<%- include('../partials/header') %>
+<%- include('../partials/cards/playheader') %>
 
 <h1>play deck</h1>
-<div id="play-card-front">
-    <%= card.front %>
+
+<div class="card">
+    <div id="card-front" > <%= card.front %> </div> <div id="card-back" > <%= card.back %> </div>
 </div>
-<div id="play-card-back">
-    <%= card.back %>
-</div>
+
 <div id="play-next">
     <form action="/decks/<%= deck._id %>/cards/<%= card._id %>/play/next" method="GET">
         <button type="submit">Go to Next Card</button>
+    </form>
+</div>
+<div id="play-last">
+    <form action="/decks/<%= deck._id %>/cards/<%= card._id %>/play/last" method="GET">
+        <button type="submit">Go to Last Card</button>
     </form>
 </div>
 
