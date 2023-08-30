@@ -21,5 +21,3 @@ function handleCardClick(evt) {
     }
     cardToggle = !cardToggle
 }
-
-
