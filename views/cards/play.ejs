@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+
+<h1>play deck</h1>
+<div id="play-card-front">
+    <%= card.front %>
+</div>
+<div id="play-card-back">
+    <%= card.back %>
+</div>
+<div id="play-next">
+    <form action="/decks/<%= deck._id %>/cards/<%= card._id %>/play/next" method="GET">
+        <button type="submit">Go to Next Card</button>
+    </form>
+</div>
+
+
+<br><br><h2>Comments</h2>
+<form id="add-card-comment-form" method="POST"
+    action="/decks/<%= deck._id %>/cards/<%= card._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Comment">
+</form>
+
+
+<% if (card.comments.length) { %> 
+    <div id="card-comment">
+            <% card.comments.forEach(function(com) { %>
+                <h4> <img src="<%= com.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= com.userName %> </h4>
+                <p> <%= com.content %> </p>
+                <%= com.createdAt %> 
+                <div id="delete-card-comment">
+                    <% if (user?._id.equals(com.user)) { %>
+                        <form action="/decks/<%=deck._id%>/cards/<%= card._id%>/comments/<%=com._id%>?_method=DELETE" method="POST">
+                            <button type="submit">DELETE COMMENT</button>
+                        </form>
+                    <% } %>
+                </div>
+            <% }) %>
+<% } else { %>
+    <h4>No Comments Yet</h4>
+<% } %>
+</div>
+
+<%- include('../partials/footer') %>

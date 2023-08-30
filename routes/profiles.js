@@ -5,4 +5,4 @@ const profilesCtrl = require('../controllers/profiles')
 
 
 
-router.get('/:profileId', profilesCtrl.index)
+// router.get('/:profileId', profilesCtrl.index)

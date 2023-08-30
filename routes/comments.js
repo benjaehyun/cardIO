@@ -5,6 +5,12 @@ const commentsCtrl = require('../controllers/comments')
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 
 router.post('/decks/:deckId/comments', ensureLoggedIn, commentsCtrl.createDeckComment)
-
+router.post('/decks/:deckId/cards/:cardId/comments', ensureLoggedIn, commentsCtrl.createCardComment)
+router.delete('/decks/:deckId/cards/:cardId/comments/:commentId', ensureLoggedIn, commentsCtrl.deleteCardComment)
 
 module.exports = router
+
+
+
+
+

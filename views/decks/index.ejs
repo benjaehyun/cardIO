@@ -16,20 +16,20 @@
   <tbody>
     <% decks.forEach(function(d) { %>
       <tr>
-        <td><a href="/decks/<%=d._id%>"> <%= d.title %> </a></td>
+        <td><a href="/decks/<%= d._id %>"> <%= d.title %> </a></td>
         <td><%= d.createdAt.toLocaleDateString() %></td>
         <td class="deck-user"><img alt="avatar" src="<%= d.userAvatar %>" referrerpolicy="no-referrer" ><%= d.userName %></td>
         <td><%= d.notes %></td>
         <% if (user?._id.equals(d.user)) { %>
         <td><a href="/decks/<%= d._id %>/edit">Edit Details</a></td>
-        <td>
-          <div id="delete-deck">
-                <form action="/decks/<%=d._id%>?_method=DELETE" method="POST">
-                    <button type="submit">DELETE DECK</button>
-                </form>
-              </div>
-            </td>
         <% } %>
+        <td>
+          <div id="play">
+                <form action="/decks/<%= d._id %>/play" method="GET">
+                    <button type="submit">PLAY</button>
+                </form>
+          </div>
+        </td>
       </tr>
       <% }); %>
     </tbody>

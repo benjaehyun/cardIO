@@ -6,7 +6,37 @@ module.exports = {
     create, 
     edit, 
     update, 
-    delete: deleteCard
+    delete: deleteCard, 
+    play, 
+    nextCard, 
+    playCurrentCard
+}
+
+async function playCurrentCard (req, res) {
+    const deck = await Deck.findById(req.params.deckId)
+    const card = await Card.findById(req.params.cardId)
+    res.render('cards/play', {deck, card})
+}
+
+async function play (req, res) {
+    const deck = await Deck.findById(req.params.deckId)
+    const card = await Card.findById(deck.cards[0])
+    res.render('cards/play', {deck, card})
+}
+
+async function nextCard(req,res) {
+    
+    const deck = await Deck.findById(req.params.deckId)
+    const cardsArr = deck.cards
+    const idx = cardsArr.findIndex(card => card._id.equals(req.params.cardId)) 
+    const nextIdx = idx + 1
+    const card = await Card.findById(deck.cards[nextIdx])
+    if (card) {
+        res.render('cards/play', {deck, card})
+    } else {
+        res.redirect(`/decks/${deck._id}`)
+    }   
+
 }
 
 async function deleteCard (req, res) {
@@ -44,13 +74,10 @@ async function edit (req, res) {
 
 function newCard (req, res) {
     const deckId = req.params.deckId
-    console.log(deckId)
     res.render('cards/new', {title: 'Add a Card', deckId}) // figure out the route for this
 }
 
 async function create (req, res) {
-    console.log('test')
-    console.log(req.body)
     const deckId = req.params.deckId
     if (req.body.comments === '') delete req.body.comments
     // for (let key in req.body) {
