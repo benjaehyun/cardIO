@@ -6,37 +6,38 @@
     <div id="card-front" > <%= card.front %> </div> <div id="card-back" > <%= card.back %> </div>
 </div>
 
-<div id="play-next">
-    <form action="/decks/<%= deck._id %>/cards/<%= card._id %>/play/next" method="GET">
-        <button type="submit">Go to Next Card</button>
-    </form>
+<div id="cardcontrols">
+    <div id="play-last">
+        <form action="/decks/<%= deck._id %>/cards/<%= card._id %>/play/last" method="GET">
+            <button id="play-last-button" type="submit">Go to Last Card</button>
+        </form>
+    </div>
+    <div id="play-next">
+        <form action="/decks/<%= deck._id %>/cards/<%= card._id %>/play/next" method="GET">
+            <button id="play-next-button" type="submit">Go to Next Card</button>
+        </form>
+    </div>
 </div>
-<div id="play-last">
-    <form action="/decks/<%= deck._id %>/cards/<%= card._id %>/play/last" method="GET">
-        <button type="submit">Go to Last Card</button>
-    </form>
-</div>
-
 
 <br><br><h2>Card Notes</h2>
 <form id="add-card-comment-form" method="POST"
     action="/decks/<%= deck._id %>/cards/<%= card._id %>/comments">
-    <label>Comment:</label>
-    <textarea name="content"></textarea>
-    <input type="submit" value="Add Comment">
+    <label>Note:</label>
+    <textarea name="content" required></textarea>
+    <input type="submit" value="Add Note">
 </form>
 
 
 <% if (card.comments.length) { %> 
-    <div id="card-comment">
-            <% card.comments.forEach(function(com) { %>
-                <h4> <img src="<%= com.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= com.userName %> </h4>
+    <% card.comments.forEach(function(com) { %>
+        <div id="card-comment">
+                <h4> <img id="commentpfp" src="<%= com.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= com.userName %> </h4>
                 <p> <%= com.content %> </p>
                 <%= com.createdAt %> 
                 <div id="delete-card-comment">
                     <% if (user?._id.equals(com.user)) { %>
                         <form action="/decks/<%=deck._id%>/cards/<%= card._id%>/comments/<%=com._id%>?_method=DELETE" method="POST">
-                            <button type="submit">DELETE COMMENT</button>
+                            <button type="submit">DELETE Note</button>
                         </form>
                     <% } %>
                 </div>

@@ -1,0 +1,58 @@
+main {
+    margin: 10vmin;
+}
+
+#playbutton {
+    width: 13vmin;
+    height: 8vmin;
+    border-radius: 10%;
+}
+
+#adjustbuttons {
+    display: flex;
+    width: 13vmin;
+    height: 8vmin;
+    border-radius: 10%;
+    /* margin: 5vmin; */
+}
+
+#delete-deck {
+    display: flex;
+    justify-content: end;
+    justify-self: end;
+}
+
+#deletebutton {
+    width: 13vmin;
+    height: 8vmin;
+    border-radius: 10%;
+}
+
+#addbutton {
+    width: 13vmin;
+    height: 8vmin;
+    border-radius: 10%;
+    margin-top: 5vmin;
+}
+
+#cardlist {
+    display: flex; 
+    flex-wrap: wrap;
+
+}
+
+#deck-card-front, #deck-card-back {
+    height: 18vmin; 
+    width: 30vmin;
+    margin-top: 2vmin;
+    margin-right: 5vmin;
+    margin-bottom: 2vmin;
+    text-align: center;
+    background-color: burlywood;
+}
+
+
+
+#editlink {
+    margin-bottom: 5vmin;
+}

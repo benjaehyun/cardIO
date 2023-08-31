@@ -1,23 +1,59 @@
-body {
-    background-color: bisque;
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vmin;
+}
+#card-front, #card-back { 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    min-height: 40vmin;
+    max-height: 40vmin;
+    min-width: 60vmin;
+    max-width: 60vmin; 
+    background-color: burlywood;
+    border-radius: 10%;
+    margin: 10vmin; 
 }
 
-#card-front { 
-    min-height: 20vmin;
-    max-height: 20vmin;
-    min-width: 30vmin;
-    max-width: 30vmin; 
-
-    background-color: aqua;
+#cardcontrols {
+    display: flex;
+    width: 60vmin;
+    justify-content: space-between;
 }
 
-#card-back { 
+#play-next-button, #play-last-button {
+    width: 13vmin;
+    height: 8vmin;
+    border-radius: 10%;
+    margin-top: 5vmin;
+}
+
+#card-comment {
+}
+
+#commentpfp {
+    width: 4vmin;
+}
+
+
+
+/* #card-back { 
     margin-top: 10vmin;
     min-height: 20vmin;
     max-height: 20vmin;
     min-width: 30vmin;
     max-width: 30vmin; 
-    background-color: aqua;
+    background-color: burlywood;
+    border-radius: 10%;
+} */
+
+
+#addbutton {
+    width: 13vmin;
+    height: 8vmin;
+    border-radius: 10%;
+    margin-top: 5vmin;
 }
-
-

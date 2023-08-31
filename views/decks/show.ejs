@@ -7,23 +7,28 @@
 <h3>By: <%= deck.userName %></h3>
 <img alt="avatar" src="<%= deck.userAvatar %>" referrerpolicy="no-referrer" >
 <h3>notes: <%= deck.notes%> </h3>
+<div id="adjustbuttons">
 <div id="play">
     <form action="/decks/<%= deck._id %>/play" method="GET">
-        <button type="submit">PLAY</button>
+        <button id="playbutton" type="submit">PLAY</button>
     </form>
 </div>
 
 
 
 <% if (user?._id.equals(deck.user)) { %>
-    <a href="/decks/<%= deck._id %>/edit">Edit Details</a>
+    <div id="edit">
+        <form action="/decks/<%= deck._id %>/edit" method="GET">
+            <button id="playbutton" type="submit">Edit Deck Details</button>
+        </form>
+    </div>
     <div id="delete-deck">
         <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
-            <button type="submit">DELETE DECK</button>
+            <button id="deletebutton" type="submit">DELETE DECK</button>
         </form>
     </div>
     <% } %>
-
+</div>
 <!-- <div id="delete-deck">
     <% if (user?._id.equals(deck.user)) { %>
         <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
@@ -31,33 +36,40 @@
         </form>
     <% } %> -->
 </div>
-<% deck.cards.forEach(function (c) { %> 
-    <div id="card-pair">
-        <div id="deck-card-front">
-            <%= c.front %>
-        </div>
-        <div id="deck-card-back">
-            <%= c.back %>
-        </div>
-        <div>
-            <a href="/decks/<%=deck._id%>/cards/<%=c._id%>/edit"> Edit Card </a>
-        </div>
-    </div>
-    <br> <br>
-<% }) %>
 
-<% if (user?._id.equals(deck.user)) { %>
-    <a href='/decks/<%=deck._id%>/cards/new'>Add Cards</a>
-    
-    <% } %>
+<div id="cardlist">
+    <% deck.cards.forEach(function (c) { %> 
+        <div id="card-pair">
+            <div id="deck-card-front">
+                front: <%= c.front %>
+            </div>
+            <div id="deck-card-back">
+                back: <%= c.back %>
+            </div>
+            <% if (user?._id.equals(c.user)) { %>
+                <div id="editlink">
+                    <a href="/decks/<%=deck._id%>/cards/<%=c._id%>/edit"> Edit Card </a>
+                </div>
+            <% } %>
+        </div>
+        <br> <br>
+    <% }) %>
+</div>
 
+    <% if (user?._id.equals(deck.user)) { %>
 
+        <div id="add">
+            <form action="/decks/<%=deck._id%>/cards/new" method="GET">
+                <button id="addbutton" type="submit">Add New Cards</button>
+            </form>
+        </div>        
+        <% } %>
 
 <br><br><h2>Comments</h2>
 <form id="add-deck-comment-form" method="POST"
     action="/decks/<%= deck._id %>/comments">
-    <label>Comment:</label>
-    <textarea name="content"></textarea>
+    <label>Comment: <br></label>
+    <textarea name="content" required></textarea>
     <input type="submit" value="Add Comment">
 </form>
 

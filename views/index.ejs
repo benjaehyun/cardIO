@@ -6,16 +6,29 @@
 
 <% if (user) { %>
   <!-- code out the links that you want to add for logged in users -->
-  <a href="/decks/"> Go To My Decks </a>
-  <a href="/decks/new"> Create a New Deck</a>
-  <a href="/logout">LOGOUT</a>
+ <div id="deck">
+  <a href="/decks/"> 
+    <img id="deckimg" src="/images/cards.png" alt="">
+    Go To My Decks 
+  </a>
+</div>
+  <br>
+<div id="new">
+  <a href="/decks/new"> Create a New Deck 
+    <img id="newimg" src="/images/pencil.png" alt="">
+  </a>
+</div>
 <% } else { %>
-  <div>
+  
+  <div id="login">
     <a href="/auth/google">Login</a> to create a deck and add comments
   </div>
 <% } %>
-<div>
-  <a href="/decks/all">See</a> all of the decks other users have created
+<div id="all">
+  <a href="/decks/all">
+    <img id="allimg" src="/images/cardstack.png" alt="">
+    See all of the decks other users have created
+  </a>
 </div>
 
   </body>

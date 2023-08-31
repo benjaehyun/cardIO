@@ -1,15 +1,22 @@
 <%- include('../partials/decks/editHeader') %>
+<h1>Edit Deck Details</h1>
 
 <form action="/decks/<%= deck._id %>?_method=PUT" method="POST">
-    <input type="text" name="title" value="<%= deck.title %>"><br>
-    <input type="text" name="notes" value="<%= deck.notes %>"><br>
-    <button type="submit">Update Deck</button>    
+    <div id="titleinput">
+    Title: <br><input type="text" name="title" value="<%= deck.title %>"><br>
+    </div>
+    <div id="notesinput">
+    Notes: <br> <input type="text" name="notes" value="<%= deck.notes %>"><br>
+    </div>
+    <div id="updatediv">
+        <button id="updatebutton" type="submit">Update Deck</button>    
+    </div>
 </form>
 
 <div id="delete-deck">
     <% if (user?._id.equals(deck.user)) { %>
         <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
-            <button type="submit">DELETE DECK</button>
+            <button id="deletebutton" type="submit">DELETE DECK</button>
         </form>
     <% } %>
 </div>

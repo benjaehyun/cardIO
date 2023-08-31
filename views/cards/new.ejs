@@ -3,13 +3,13 @@
 <!-- how to store the deck id -->
 <form action="/decks/<%= deckId %>/cards/" method="POST">
     <label> Card Front: </label>
-    <input type="text" name="front">
+    <input type="text" name="front" required>
     <!-- make this required -->
-    <label> Card Back: </label>
-    <input type="text" name="back">
+    <label> Card Back: </label required>
+    <input type="text" name="back" required>
     <!-- make this required -->
-    <label> Card Comment: </label>
-    <input type="text" name="comments">
+    <!-- <label> Card Notes: </label>
+    <input type="text" name="comments"> -->
     <input type="submit" value="Add Card">
 </form>
 

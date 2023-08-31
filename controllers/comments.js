@@ -38,7 +38,7 @@ async function createDeckComment (req, res) {
     const deck = await Deck.findById(req.params.deckId)
     req.body.user = req.user._id 
     req.body.userName = req.user.name 
-    req.body.avatar = req.user.avatar
+    req.body.userAvatar = req.user.avatar
     deck.comments.push(req.body)
     try {
         await deck.save() 
@@ -59,6 +59,5 @@ async function createCardComment (req, res) {
     } catch (err) {
         console.log(err)
     }
-    console.log(card.comments[1].userAvatar)
     res.redirect(`/decks/${deck._id}/cards/${card._id}/play`)
 }

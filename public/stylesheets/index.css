@@ -1,0 +1,41 @@
+main {
+    display: flex; 
+    flex-direction: column;
+    margin: 0 15vmin 0 15vmin; 
+}
+
+h1, p {
+    text-align: center;
+}
+
+#decks {
+    /* display: flex;  */
+    align-self: flex-start;
+} 
+
+#new {
+    /* display: flex;  */
+    align-self: flex-end;
+}
+
+#login {
+    /* display: flex;  */
+    align-self: flex-start;
+}
+
+#all {
+
+}
+
+#newimg { 
+    width: 20vmin;
+    margin-left: 2vmin;
+}
+
+#deckimg {
+    width: 20vmin; 
+}
+
+#allimg {
+    width: 20vmin; 
+}
