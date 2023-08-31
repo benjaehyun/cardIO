@@ -40,6 +40,7 @@ If you want to leave a comment on a deck or card, navigate to the bottom of eith
 * Github inspired functions to clone and merge decks
 * Importing large amounts of data/entire decks from .csv or .apkg files 
 * Wolfram Alpha/ChatGPT api implementation so that supplemental information can be provided to the user while viewing flashcards or so that the user can ask questions as they're studying
+    * Also use ChatGPT api so that a user can paste a whole article or written lession to write flashcards for you 
 * Implement infinite play functionality so that users can parse through the deck randomly without a definite end
     * Adjust the deck data model to keep track of a "temperature" so that the user can adjust the temperature with each completion of the card based on their confidence on the topic. This way, cards with a lower "temperature" or confidence score will show up more frequently. 
 * Add tags and categories for easier user navigation of all decks, as well the ability for the user to search for decks based on title, categories, or tags. 

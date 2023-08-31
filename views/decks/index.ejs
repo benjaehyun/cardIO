@@ -10,7 +10,7 @@
       <th>User</th>
       <th>Notes</th>
       <th>Edit Deck Details</th>
-      <th></th>
+      <th>Play</th>
     </tr>
   </thead>
   <tbody>
@@ -21,7 +21,7 @@
         <td class="deck-user"><img alt="avatar" src="<%= d.userAvatar %>" referrerpolicy="no-referrer" ><%= d.userName %></td>
         <td><%= d.notes %></td>
         <% if (user?._id.equals(d.user)) { %>
-        <td><a href="/decks/<%= d._id %>/edit">Edit Details</a></td>
+         <td><a href="/decks/<%= d._id %>/edit">Edit Details</a></td>
         <% } %>
         <td>
           <div id="play">

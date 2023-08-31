@@ -8,6 +8,7 @@ module.exports = {
 async function index(req, res) {
     const user = await Profile.findById(req.params.profileId)
     const decks = await Deck.find({'user': req.params.profileId})
-    res.render('profiles/index', {decks, user})
+    currentUser = req.user 
+    res.render('profiles/index', {decks, user, currentUser})
 }
 
