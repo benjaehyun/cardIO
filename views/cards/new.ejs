@@ -1,18 +1,26 @@
 <%- include('../partials/cards/newHeader') %>
 
 <!-- how to store the deck id -->
-<form action="/decks/<%= deckId %>/cards/" method="POST">
-    <label> Card Front: </label>
-    <input type="text" name="front" required>
-    <!-- make this required -->
-    <label> Card Back: </label required>
-    <input type="text" name="back" required>
-    <!-- make this required -->
-    <!-- <label> Card Notes: </label>
-    <input type="text" name="comments"> -->
-    <input type="submit" value="Add Card">
-</form>
+<div id="cardform">
+    <form action="/decks/<%= deckId %>/cards/" method="POST">
+        <label> Card Front: </label>
+        <textarea id="frontinput"  name="front" required></textarea>
+        <!-- make this required -->
+        <label> Card Back: </label required>
+            <textarea id="backinput"  name="back" required></textarea>
+            <!-- make this required -->
+            <!-- <label> Card Notes: </label>
+                <input type="text" name="comments"> -->
+                <input id="submitinput" type="submit" value="Add Card">
+            </form>
+</div>
 
-<a href="/decks/<%= deckId %>">Go Back To Deck </a>
+
+<div id="return">
+    <form action="/decks/<%= deckId %>" method="GET">
+        <button id="returnbutton" type="submit">Go Back To The Deck</button>
+    </form>
+</div>
+<!-- <a href="/decks/<%= deckId %>">Go Back To Deck </a> -->
 
 <%- include('../partials/footer') %>

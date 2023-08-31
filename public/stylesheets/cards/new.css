@@ -1,0 +1,30 @@
+#frontinput, #backinput {
+    width: 40vmin;
+    height: 30vmin;
+}
+
+#cardform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#submitinput {
+    margin-bottom: 5vmin;
+    width: 13vmin;
+    height: 8vmin;
+    border-radius: 10%;
+}
+
+#returnbutton {
+    width: 20vmin;
+    height: 12.3vmin;
+    border-radius: 10%;
+}
+
+#return {
+    margin-top: 10vmin;
+    display: flex;
+    justify-content: center;
+    
+}

@@ -1,0 +1,27 @@
+h1 {
+    margin-left: 5vmin;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    width: 13vmin;
+    height: 8vmin;
+    border-radius: 10%;
+    margin-top: 5vmin;
+    margin-left: 5vmin;
+}
+
+textarea {
+    width: 40vmin;
+    height: 30vmin;
+    margin-right: 5vmin;
+    margin-left: 2vmin;
+}
+
+#deletebutton {
+    background-color: crimson;
+}

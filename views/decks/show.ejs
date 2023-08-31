@@ -41,10 +41,10 @@
     <% deck.cards.forEach(function (c) { %> 
         <div id="card-pair">
             <div id="deck-card-front">
-                front: <%= c.front %>
+                front: <br> <%= c.front %>
             </div>
             <div id="deck-card-back">
-                back: <%= c.back %>
+                back: <br> <%= c.back %>
             </div>
             <% if (user?._id.equals(c.user)) { %>
                 <div id="editlink">

@@ -2,23 +2,15 @@
 cardIO is a powerful educational resource designed to draw on high-yield learning from spaced repetition during long study sessions. This app was developed with a focus on efficiency, effectiveness, and user-friendliness, drawing inspiration from popular platforms like Anki and Quizlet. In cardIO, users are able to create their own decks of flashcards and go through each card until they are finished with the deck. Users are also able to view all of the decks created on cardIO and see collections of decks a particular user has made as well. Also, users are encouraged to have discussions on various topics with comments and message boards within both decks and individual cards.  
 
 <div style="display:flex; margin: 5vmin auto; justify-content:center;">
-<img src="https://github.com/benjaehyun/sweeper/blob/gh-pages/screenshots/Screenshot%202023-08-10%20at%207.46.47%20PM.png?raw=true"  alt ="Starting Title and Directions" width ="30%" style="margin-right:1vmin"> 
-
-
-<img src="https://github.com/benjaehyun/sweeper/blob/gh-pages/screenshots/Screenshot%202023-08-10%20at%205.18.06%20PM.png?raw=true"  alt="Showing Blank Board After Difficulty Selection" width="30%">
+<img src="public/images/screenshots/deckindex.png"  alt ="showing user's decks" width ="90%" style="margin-right:1vmin"> 
 </div>
 
 <div style="display:flex; margin: 5vmin auto; justify-content:center;">
-<img src="https://github.com/benjaehyun/sweeper/blob/gh-pages/screenshots/Screenshot%202023-08-10%20at%205.18.15%20PM.png?raw=true" alt="Initial Reveal Pattern" width="30%" style="margin-right:1vmin" >
-
-
-<img src="https://github.com/benjaehyun/sweeper/blob/gh-pages/screenshots/Screenshot%202023-08-10%20at%207.47.15%20PM.png?raw=true" alt="Losing Page" width="30%" >
+<img src="public/images/screenshots/deckshow.png" alt="show page for individual deck" width="90%" style="margin-right:1vmin" >
 </div>
 
-<div style="display:flex; justify-content:center; ">
-
-
-<img src="https://github.com/benjaehyun/sweeper/blob/gh-pages/screenshots/Screenshot%202023-08-10%20at%205.27.32%20PM.png?raw=true" alt="Winning Page" width = "30%" >
+<div style="display:flex; margin: 5vmin auto; justify-content:center;">
+<img src="public/images/screenshots/deckplay.png"  alt="showing individual card" width="90%">
 </div>
 
 </br>
@@ -42,7 +34,7 @@ If you want to leave a comment on a deck or card, navigate to the bottom of eith
 
 ## What's Next: 
 #### Known Bugs: 
-* 
+* Throws an error when a card is deleted then user tries to play the deck
 
 #### Additional Features 
 * Github inspired functions to clone and merge decks
