@@ -38,7 +38,8 @@ If you want to leave a comment on a deck or card, navigate to the bottom of eith
 
 #### Additional Features 
 * Github inspired functions to clone and merge decks
-* Importing large amounts of data/entire decks from .csv or .apkg files 
+* Importing large amounts of data/entire decks from .csv or .apkg files
+* Allow for image hosting, so that users can make flashcards using just images
 * Wolfram Alpha/ChatGPT api implementation so that supplemental information can be provided to the user while viewing flashcards or so that the user can ask questions as they're studying
     * Also use ChatGPT api so that a user can paste a whole article or written lession to write flashcards for you 
 * Implement infinite play functionality so that users can parse through the deck randomly without a definite end
