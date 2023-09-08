@@ -19,7 +19,7 @@ cardIO is a powerful educational resource designed to draw on high-yield learnin
 Technologies Used: JavaScript, HTML, CSS, Node.js, Express.js, MongoDB, and Mongoose
 
 ## Getting Started:
-https://benjaehyun.github.io/sweeper/
+https://cardio-d645429cce4f.herokuapp.com/
 
 Log into your Google account to be able to access full functionality of the cardIO app. 
 
