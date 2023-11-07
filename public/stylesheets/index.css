@@ -23,8 +23,8 @@ h1, p {
     align-self: flex-start;
 }
 
-#all {
-
+#homepage-bg {
+    margin: 0 -15vmin 5vmin -15vmin;
 }
 
 #newimg { 
@@ -38,4 +38,10 @@ h1, p {
 
 #allimg {
     width: 20vmin; 
+}
+.background-div {
+    margin: 0 -15vmin 0vmin -15vmin;
+    height: 89vmin;
+    background-position: center;
+    display: flex
 }

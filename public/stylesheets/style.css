@@ -23,20 +23,24 @@ a {
 }
 
 body > nav {
-  grid-area: nav;
   background-color: #B8C0C2;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   padding: 0 20px 0 30px;
-
+  height: 100px;
 }
 
 nav > a {
-  margin: 20px;
+  margin: auto 5vmin auto 5vmin;
   text-decoration: none;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 0.15rem;
+  display: flex;
+  align-items: center;
+  height: 34px;
+  width: 100px;
+  justify-content: center;
 }
 
 nav > a:hover:not(.active) {
@@ -49,10 +53,13 @@ nav > a.active {
   cursor: default;
 }
 
+nav > .logout, .login {
+  margin-left: auto;
+}
+
 #google-img {
   width: 34px;
   object-fit: contain;
-  margin-right: auto;
 }
 
 #badge-container {
@@ -102,7 +109,7 @@ table td {
 .deck-user {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;margin-left: 10vmin;
 }
 
 .deck-user img {
@@ -119,5 +126,7 @@ table td {
 }
 
 #logo-img {
-  width: 5vmin;
+  width: 6.5vmin;
+  margin-left: 10vmin;
+  margin-right: 5vmin;
 }
