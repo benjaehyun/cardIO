@@ -3,17 +3,22 @@
 
 
 <div class="background-div" style="background-image: url('images/geometric-image.jpg');">
-  <div>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <div class="main-text">
+    <h1>Welcome to <%= title %>!</h1>
+    <p>
+      cardIO is a powerful educational resource designed to draw on high-yield learning from spaced repetition during long study sessions.
+       This app was developed with a focus on efficiency, effectiveness, and user-friendliness, drawing inspiration from popular platforms like Anki and Quizlet. 
+       In cardIO, users are able to create their own decks of flashcards and go through each card until they are finished with the deck. Users are also able to view 
+       all of the decks created on cardIO and see collections of decks a particular user has made as well. Also, users are encouraged to have discussions on various topics 
+       with comments and message boards within both decks and individual cards.
+    </p>
     <% if (user) { %>
-      <a href="/decks/"> Go To My Decks </a>
-      <a href="/decks/new"> Create a New Deck </a>
-      <a href="/decks/all"> See all of the decks other users have created </a>
+      <h4><a href="/decks/new"><button>Get Started</button></a><br> </h4>
     <% } else { %>
-      <a href="/auth/google">Login</a> to create a deck and add comments
-      <a href="/decks/all"> See all of the decks other users have created </a>
+      <h4><a href="/auth/google"><button>Login</button></a> to create a deck and add comments <br> </h4>
+      <h4><a href="/decks/all"> <button>See</button></a> all of the decks other users have created </h4>
     <% } %>
+    <h3>Happy Studying !</h3>
     </div>
   </div>
 

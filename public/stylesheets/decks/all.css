@@ -1,0 +1,20 @@
+form > button { 
+    padding: 10px;
+    border-radius: 0.15rem;
+    height: 34px;
+    width: 100px;
+    border-style: none;
+    background-color: aqua;
+}
+
+form > button:hover {
+    color: white;
+    background-color: #424748;
+}
+
+.all-decks { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

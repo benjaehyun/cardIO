@@ -4,44 +4,54 @@ main {
     margin: 0 15vmin 0 15vmin; 
 }
 
-h1, p {
-    text-align: center;
-}
-
-#decks {
-    /* display: flex;  */
-    align-self: flex-start;
-} 
-
-#new {
-    /* display: flex;  */
-    align-self: flex-end;
-}
-
-#login {
-    /* display: flex;  */
-    align-self: flex-start;
-}
-
-#homepage-bg {
-    margin: 0 -15vmin 5vmin -15vmin;
-}
-
-#newimg { 
-    width: 20vmin;
-    margin-left: 2vmin;
-}
-
-#deckimg {
-    width: 20vmin; 
-}
-
-#allimg {
-    width: 20vmin; 
-}
 .background-div {
     margin: 0 -15vmin 0vmin -15vmin;
     height: 89vmin;
     background-position: center;
     display: flex
 }
+
+.main-text {
+    background-color: rgba(255, 255, 255, .85);
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    margin-left: 5vw;
+    padding: 5rem;
+    width: 40vw;
+}
+
+.main-text > h1 {
+    font-size: 3.8em;
+    margin-top: 0;
+    margin-bottom: 3vh;
+    background-color: transparent;
+}
+
+.main-text > p, a, h3 {
+    margin-left: 0.5vw;
+    background-color: transparent;
+}
+
+.main-text > h4 {
+    background-color: transparent;
+}
+
+.main-text > a {
+    font-size: 1.5em;
+}
+
+a > button {
+    padding: 10px;
+    border-radius: 0.15rem;
+    height: 34px;
+    width: 100px;
+    border-style: none;
+    background-color: aqua;
+}
+
+a > button:hover {
+    color: white;
+    background-color: #424748;
+}
+
+

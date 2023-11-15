@@ -23,7 +23,7 @@ a {
 }
 
 body > nav {
-  background-color: #B8C0C2;
+  background-color: rgb(136, 250, 236);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -41,6 +41,7 @@ nav > a {
   height: 34px;
   width: 100px;
   justify-content: center;
+  background-color: white;
 }
 
 nav > a:hover:not(.active) {
@@ -109,7 +110,7 @@ table td {
 .deck-user {
   display: flex;
   justify-content: center;
-  align-items: center;margin-left: 10vmin;
+  align-items: center;
 }
 
 .deck-user img {
@@ -127,6 +128,6 @@ table td {
 
 #logo-img {
   width: 6.5vmin;
-  margin-left: 10vmin;
+  margin-left: 1.5vw;
   margin-right: 5vmin;
 }

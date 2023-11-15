@@ -1,8 +1,8 @@
 <%- include('../partials/decks/allHeader') %>
 
-<h1>All Decks</h1>
-
-<table id="deck-list">
+<div class="all-decks">
+  <h1>All Decks</h1>
+  <table id="deck-list">
     <thead>
       <tr>
         <th>Deck Name</th>
@@ -22,15 +22,15 @@
           <td>
             <div id="play">
               <form action="/decks/<%= d._id %>/play" method="GET">
-                  <button type="submit">PLAY</button>
+                  <button type="submit">STUDY</button>
               </form>
              </div>
           </td>
-          <!-- edit link  -->
         </tr>
         <% }); %>
       </tbody>
-    </table>
+  </table>
+</div>
 
 
 <%- include('../partials/footer') %>
