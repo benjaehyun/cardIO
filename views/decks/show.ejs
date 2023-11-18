@@ -7,26 +7,18 @@
 <h3>By: <%= deck.userName %></h3>
 <img alt="avatar" src="<%= deck.userAvatar %>" referrerpolicy="no-referrer" >
 <h3>notes: <%= deck.notes%> </h3>
-<div id="adjustbuttons">
-<div id="play">
-    <form action="/decks/<%= deck._id %>/play" method="GET">
-        <button id="playbutton" type="submit">PLAY</button>
-    </form>
-</div>
 
-
-
-<% if (user?._id.equals(deck.user)) { %>
-    <div id="edit">
+<div class="adjustbuttons">
+        <form action="/decks/<%= deck._id %>/play" method="GET">
+            <button id="playbutton" type="submit">PLAY</button>
+        </form>
+    <% if (user?._id.equals(deck.user)) { %>
         <form action="/decks/<%= deck._id %>/edit" method="GET">
             <button id="playbutton" type="submit">Edit Deck Details</button>
         </form>
-    </div>
-    <div id="delete-deck">
         <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
-            <button id="deletebutton" type="submit">DELETE DECK</button>
+            <button class="delete-button" type="submit">DELETE DECK</button>
         </form>
-    </div>
     <% } %>
 </div>
 
@@ -55,7 +47,7 @@
 
         <div id="add">
             <form action="/decks/<%=deck._id%>/cards/new" method="GET">
-                <button id="addbutton" type="submit">Add New Cards</button>
+                <button type="submit">Add New Cards</button>
             </form>
         </div>        
         <% } %>
@@ -65,7 +57,8 @@
     action="/decks/<%= deck._id %>/comments">
     <label>Comment: <br></label>
     <textarea name="content" required></textarea>
-    <input type="submit" value="Add Comment">
+    <!-- <input type="submit" value="Add Comment"> -->
+    <button type="submit">Add Comment</button>
 </form>
 
 <% if (deck.comments.length) { %> 
@@ -77,7 +70,7 @@
             <div id="delete-card-comment">
                 <% if (user?._id.equals(com.user)) { %>
                     <form action="/decks/<%=deck._id%>/comments/<%=com._id%>?_method=DELETE" method="POST">
-                        <button type="submit">DELETE COMMENT</button>
+                        <button class="delete-comment" type="submit">DELETE </button>
                     </form>
                 <% } %>
             </div>

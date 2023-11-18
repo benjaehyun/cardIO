@@ -2,38 +2,37 @@ main {
     margin: 10vmin;
 }
 
-#playbutton {
-    width: 13vmin;
-    height: 8vmin;
-    border-radius: 10%;
-}
 
-#adjustbuttons {
+.adjustbuttons {
     display: flex;
-    width: 13vmin;
-    height: 8vmin;
-    border-radius: 10%;
-    /* margin: 5vmin; */
+    justify-content: space-between;
+    width: 30vw;
 }
 
-#delete-deck {
-    display: flex;
-    justify-content: end;
-    justify-self: end;
+form > button { 
+    padding: 10px;
+    border-radius: 0.15rem;
+    height: 60px;
+    width: 120px;
+    border-style: none;
+    background-color: aqua;
 }
 
-#deletebutton {
-    width: 13vmin;
-    height: 8vmin;
-    border-radius: 10%;
+.delete-button {
+    background-color: orangered;
 }
 
-#addbutton {
-    width: 13vmin;
-    height: 8vmin;
-    border-radius: 10%;
-    margin-top: 5vmin;
+.delete-comment {
+    background-color: orangered;
+    height: 35px;
+    width: 80px;
 }
+
+form > button:hover {
+    color: white;
+    background-color: #424748;
+}
+
 
 #cardlist {
     display: flex; 
