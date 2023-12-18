@@ -20,7 +20,7 @@
           <td><%= d.createdAt.toLocaleDateString() %></td>
           <td class="deck-user"><img alt="avatar" src="<%= d.userAvatar %>" referrerpolicy="no-referrer" ><%= d.userName %></td>
           <td><%= d.notes %></td>
-          <% if (currentUser._id.equals(d.user)) { %>
+          <% if (currentUser && currentUser._id.equals(d.user)) { %>
             <td><a href="/decks/<%= d._id %>/edit">Edit Details</a></td>
             
           <% } %>

@@ -3,7 +3,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10vmin;
+    margin-top: 0.5rem;
 }
 #card-front, #card-back { 
     display: flex; 
