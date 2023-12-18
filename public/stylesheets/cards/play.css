@@ -24,7 +24,7 @@ main {
     justify-content: space-between;
 }
 
-#play-next-button, #play-last-button {
+#play-next-button, #play-last-button, #flip-card-button {
     width: 13vmin;
     height: 8vmin;
     border-radius: 10%;
